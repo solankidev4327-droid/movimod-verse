@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MoviMod Verse - Movies & Entertainment</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#090d18;color:white;font-family:Arial,sans-serif}
+header{padding:20px;background:#111827;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.logo{font-size:25px;font-weight:bold;color:#ff4757}
+nav a{color:white;text-decoration:none;margin:8px;font-size:14px}
+.hero{text-align:center;padding:65px 15px;background:linear-gradient(135deg,#202b49,#101322)}
+.hero h1{font-size:34px;margin:0 0 12px}
+.hero span{color:#ff4757}
+.hero p{color:#ccc}
+.search{margin-top:20px;padding:14px;width:90%;max-width:480px;border:0;border-radius:8px;font-size:16px}
+h2{margin:25px 15px 10px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:15px;padding:15px}
+.card{background:#171e30;border-radius:10px;overflow:hidden;padding-bottom:15px}
+.poster{height:165px;background:linear-gradient(145deg,#313e61,#9b3546);display:flex;align-items:center;justify-content:center;text-align:center;font-size:23px;font-weight:bold;padding:10px}
+.card h3{font-size:16px;margin:12px 10px 5px}
+.card p{color:#aaa;font-size:12px;margin:5px 10px}
+.btn{display:block;text-align:center;margin:8px 10px;padding:9px;background:#ff4757;color:white;text-decoration:none;border-radius:6px;font-size:13px}
+.btn.alt{background:#263653}
+.notice{margin:15px;padding:15px;background:#171e30;border-radius:8px;color:#ccc;line-height:1.6}
+footer{text-align:center;padding:25px;color:#999;background:#111827;margin-top:30px}
+</style>
+</head>
+<body>
+
+<header>
+<div class="logo">🎬 MOVIMOD VERSE</div>
+<nav>
+<a href="#">Home</a>
+<a href="#movies">Movies</a>
+<a href="#about">About</a>
+</nav>
+</header>
+
+<section class="hero">
+<h1>Welcome to <span>MoviMod Verse</span></h1>
+<p>Discover Movies, Trailers & Entertainment</p>
+<input class="search" id="search" type="text" placeholder="Search your favourite movie...">
+</section>
+
+<h2 id="movies">🔥 Explore Movies</h2>
+<div class="grid" id="movieGrid">
+
+<div class="card" data-name="inception">
+<div class="poster">INCEPTION</div>
+<h3>Inception</h3><p>2010 • Sci-Fi</p>
+<a class="btn" href="https://www.youtube.com/results?search_query=Inception+official+trailer" target="_blank">Watch Trailer</a>
+<a class="btn alt" href="https://www.justwatch.com/in/search?q=Inception" target="_blank">Find Legal Watch</a>
+</div>
+
+<div class="card" data-name="interstellar">
+<div class="poster">INTERSTELLAR</div>
+<h3>Interstellar</h3><p>2014 • Sci-Fi</p>
+<a class="btn" href="https://www.youtube.com/results?search_query=Interstellar+official+trailer" target="_blank">Watch Trailer</a>
+<a class="btn alt" href="https://www.justwatch.com/in/search?q=Interstellar" target="_blank">Find Legal Watch</a>
+</div>
+
+<div class="card" data-name="avengers endgame">
+<div class="poster">AVENGERS</div>
+<h3>Avengers: Endgame</h3><p>2019 • Action</p>
+<a class="btn" href="https://www.youtube.com/results?search_query=Avengers+Endgame+official+trailer" target="_blank">Watch Trailer</a>
+<a class="btn alt" href="https://www.justwatch.com/in/search?q=Avengers%20Endgame" target="_blank">Find Legal Watch</a>
+</div>
+
+<div class="card" data-name="ramayana">
+<div class="poster">RAMAYANA</div>
+<h3>Ramayana</h3><p>Mythology</p>
+<a class="btn" href="https://www.youtube.com/results?search_query=Ramayana+official+trailer" target="_blank">Watch Trailer</a>
+<a class="btn alt" href="https://www.justwatch.com/in/search?q=Ramayana" target="_blank">Find Legal Watch</a>
+</div>
+
+<div class="card" data-name="dangal">
+<div class="poster">DANGAL</div>
+<h3>Dangal</h3><p>2016 • Drama</p>
+<a class="btn" href="https://www.youtube.com/results?search_query=Dangal+official+trailer" target="_blank">Watch Trailer</a>
+<a class="btn alt" href="https://www.justwatch.com/in/search?q=Dangal" target="_blank">Find Legal Watch</a>
+</div>
+
+<div class="card" data-name="kgf">
+<div class="poster">KGF</div>
+<h3>KGF Chapter 2</h3><p>2022 • Action</p>
+<a class="btn" href="https://www.youtube.com/results?search_query=KGF+Chapter+2+official+trailer" target="_blank">Watch Trailer</a>
+<a class="btn alt" href="https://www.justwatch.com/in/search?q=KGF%20Chapter%202" target="_blank">Find Legal Watch</a>
+</div>
+
+</div>
+
+<div class="notice" id="about">
+<h3>About MoviMod Verse</h3>
+<p>Discover movies, explore trailers and find where to watch films legally. Downloads will be provided only for movies that are public domain or officially licensed for download.</p>
+</div>
+
+<footer>© 2026 MoviMod Verse | All Rights Reserved</footer>
+
+<script>
+document.getElementById("search").addEventListener("input",function(){
+let value=this.value.toLowerCase();
+document.querySelectorAll(".card").forEach(card=>{
+card.style.display=card.dataset.name.includes(value)?"block":"none";
+});
+});
+</script>
+</body>
+</html>
